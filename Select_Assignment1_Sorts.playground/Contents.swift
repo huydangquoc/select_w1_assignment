@@ -36,6 +36,13 @@ public class SortTestCase : XCTestCase {
         let result = XCTAssertEqual(sortMethod(list), [1, 2, 3])
         print("testUnsortedList", result)
     }
+    
+    // Requirement: One basic test to check an edge case
+    func testEdgeCase() {
+        let list = [8, 6, 8, 6, 8, 6, 8, 6, 8, 6]
+        let result = XCTAssertEqual(sortMethod(list), [6, 6, 6, 6, 6, 8, 8, 8, 8, 8])
+        print("testEdgeCase", result)
+    }
 }
 
 print("--- Bogo Sort testing ---")
