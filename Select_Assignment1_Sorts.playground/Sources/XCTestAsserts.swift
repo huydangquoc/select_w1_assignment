@@ -250,10 +250,14 @@ public class XCTestCase: NSObject {
             let m = method_getName(mlist.memory)
             if String(m).hasPrefix("test") {
                 self.setUp()
+                let startTime = NSDate()
                 self.performSelectorOnMainThread(
                     m,
                     withObject: nil,
                     waitUntilDone: true)
+                let endTime = NSDate()
+                let runTime = endTime.timeIntervalSinceDate(startTime)
+                print("Run time: \(runTime)")
                 self.tearDown()
             }
             mlist = mlist.successor()
