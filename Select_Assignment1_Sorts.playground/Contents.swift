@@ -15,26 +15,38 @@ public class SortTestCase : XCTestCase {
     
     func testEmptyArray() {
         let list: [Int] = []
-        XCTAssertEqual(sortMethod(list), [])
+        let result = XCTAssertEqual(sortMethod(list), [])
+        print("testEmptyArray", result)
     }
     
     func testOneElementArray() {
         let list = [1]
-        XCTAssertEqual(sortMethod(list), [1])
+        let result = XCTAssertEqual(sortMethod(list), [1])
+        print("testOneElementArray", result)
     }
     
     func testSortedList() {
         let list = [1,2,3]
-        XCTAssertEqual(sortMethod(list), [1,2,3])
+        let result = XCTAssertEqual(sortMethod(list), [1,2,3])
+        print("testSortedList", result)
     }
     
     func testUnsortedList() {
         let list = [3, 2, 1]
-        XCTAssertEqual(sortMethod(list), [1, 2, 3])
+        let result = XCTAssertEqual(sortMethod(list), [1, 2, 3])
+        print("testUnsortedList", result)
     }
 }
 
+print("--- Bogo Sort testing ---")
 SortTestCase(method: bogoSort)
+
+print("--- Selection Sort testing ---")
 SortTestCase(method: selectSort)
+
+print("--- Quick Sort testing ---")
 SortTestCase(method: quickSort)
+
+print("--- Merge Sort testing ---")
 SortTestCase(method: mergeSort)
+
