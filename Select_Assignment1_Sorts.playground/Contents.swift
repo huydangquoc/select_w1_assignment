@@ -36,5 +36,5 @@ public class SortTestCase : XCTestCase {
 
 SortTestCase(method: bogoSort)
 //SortTestCase(method: selectSort)
-//SortTestCase(method: quickSort)
+SortTestCase(method: quickSort)
 SortTestCase(method: mergeSort)
